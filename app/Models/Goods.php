@@ -34,21 +34,21 @@ class Goods extends Model
 
     public function saveData(): void
     {
-        foreach ($this->data as $this->item) {
+        foreach ($this->data as $item) {
             Goods::updateOrInsert(
-                ['serial_number' => $this->item->СерийныйНомер],
-                ['code' => (int) $this->item->КодТовара,
-                'storage' => $this->item->Склад,
-                'region' => $this->item->Регион,
-                'engineer_comment' => $this->item->КомментарийИнженера,
-                'reason_discount_expand' => $this->item->ПричинаУценкиРазвернуто,
-                'condition' => $this->item->Состояние,
-                'guarantee_cancel_date' => Carbon::parse($this->item->ДатаОкончанияГарантии),
-                'serviceability' => $this->item->Работоспособность,
-                'kit' => $this->item->Комплект,
-                'name' => $this->item->name,
-                'images' => $this->item->images,
-                'original_price' => $this->item->price]
+                ['serial_number' => $item->СерийныйНомер],
+                ['code' => (int) $item->КодТовара,
+                'storage' => $item->Склад,
+                'region' => $item->Регион,
+                'engineer_comment' => $item->КомментарийИнженера,
+                'reason_discount_expand' => $item->ПричинаУценкиРазвернуто,
+                'condition' => $item->Состояние,
+                'guarantee_cancel_date' => Carbon::parse($item->ДатаОкончанияГарантии),
+                'serviceability' => $item->Работоспособность,
+                'kit' => $item->Комплект,
+                'name' => $item->name,
+                'images' => $item->images,
+                'original_price' => $item->price]
             );
         }
     }

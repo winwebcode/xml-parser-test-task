@@ -16,15 +16,15 @@ class CreateGoodsTable extends Migration
         Schema::create('goods', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('images');
+            $table->text('images')->nullable();
             $table->string('serial_number');
             $table->integer('code'); //код товара
             $table->string('storage'); //склад
             $table->string('region');
             $table->string('original_price');
-            $table->text('engineer_comment');
-            $table->text('reason_discount_expand'); //причина уценки развернуто
-            $table->string('condition');
+            $table->text('engineer_comment')->nullable();
+            $table->text('reason_discount_expand')->nullable(); //причина уценки развернуто
+            $table->string('condition')->nullable();
             $table->string('serviceability')->nullable(); //работоспособность / испавность
             $table->date('guarantee_cancel_date')->nullable();
             $table->text('kit')->nullable(); //комплект
