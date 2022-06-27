@@ -65,7 +65,7 @@ class XmlParser extends Model
         return true;
     }
 
-    public function parser()
+    public function parser(): SimpleXMLElement
     {
         $xmlData = new SimpleXMLElement($this->response);
         foreach ($xmlData as $this->item) {
